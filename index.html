@@ -1,0 +1,137 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title></title>
+    <!--<meta name="viewport" content="width=device-width">-->
+    <meta name="viewport" content="width=610px, initial-scale=.58, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="/collagePlus/transitions.css" />
+    <link rel="stylesheet" href="/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+
+    <script src="jquery-1.11.2.js"></script>
+    <script src="/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script src="/collagePlus/jquery.collageCaption.js"></script>
+    <script src="/collagePlus/jquery.collagePlus.js"></script>
+    <script src="/collagePlus/jquery.removeWhitespace.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div data-dom-cache="true" class="container">
+        <div class="center">
+            <h1 class="heading" align="center">hello, im jon.</h1> 
+            <ul class='nav-fade'>
+                <li onclick='expandNav(this.id)' id='preface'>Preface
+                </li>
+                <li onclick='expandNav(this.id)' id='aboutme'>About Me
+                </li>
+                <li onclick='expandNav(this.id)' id='projects'>Projects
+                </li>
+                <li>Resume
+                </li>
+                <li onclick='expandNav(this.id)' id='contact'>Contact</li>
+            </ul>
+        </div>
+
+        <div class='Collage' id='divExpandNav'>
+            <p style='display:none' id='preface'>After being busy with school and work, I have found some time and motivation to create my personal website. I've been wanting to code up my own website for some time because I've been fascinated with Javascript and its frameworks. As a kid, I would go on Xanga (an old blog which was equivalent to Facebook at the time) and make my own front-end layouts with cool music, backgrounds, and text.
+                <br>
+                <br>This project gave me an opportunity to get down with JavaScript, jQuery, CSS, and HTML. I aimed to make my website <strong>interactive</strong>, <strong>creative</strong>, <strong>simplistic</strong>, and <strong>boring</strong> (just kidding). The photos below are arranged using a jQuery plug-in, CollagePlus by Ed Lea. I handled the events (Popups, transitions, etc.) with a mix of Javascript and jQuery (and jQuery Mobile framework). Thanks to the jQuery/JavaScript documentation and Stack Overflow for the help.
+            </p>
+            <p style='display:none' id='aboutme'>My name is Jon Almazan, and I recently graduated with a BS in Computer Science at California State University, Long Beach. Some areas that interest me are computer networking, systems adminstration, and web applications.
+                <br>
+                <br>I enjoy basketball, rock climbing, quality time family and friends, In-N-Out, <strong>all-you-cant-eat buffets</strong>, music, and anything that is fun, funny, or thrilling. If you have not noticed, I have placed some of my favorite images that I appreciate.</p>
+            <p class='center' style='display:none' id='projects'>
+               <a href="#popupVideo" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Boozehound</a>
+                <br><br>
+                <strong>Boozehound</strong><br>
+                Collaborated with two other classmates to create a semester-long project. This was our first Android application, which was intended for (legal and responsible) CSULB students. Our goal was to create it as <strong>a knock off "Yelp for beer"</strong> with fun little features. We programmed in Java on Eclipse IDE.
+            </p>
+            <p class='center' style='display:none' id='contact'>
+                <strong>E-mail:</strong> jon_alma10@yahoo.com<br>
+            </p>
+        </div>
+
+        <!--div popup projects-->
+        <div data-role="popup" id="popupVideo" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/KmRDwB3SeMI" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!--div popup images-->
+        <div data-caption="This is some data" data-role="popup" id="popupParis1" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto1">
+        </div>
+        <div data-role="popup" id="popupParis2" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto2">
+        </div>
+        <div data-role="popup" id="popupParis3" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto3">
+        </div>
+        <div data-role="popup" id="popupParis4" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto4">
+        </div>
+        <div data-role="popup" id="popupParis5" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto5">
+        </div>
+        <div data-role="popup" id="popupParis6" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto6">
+        </div>
+        <div data-role="popup" id="popupParis7" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto7">
+        </div>
+        <div data-role="popup" id="popupParis8" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto8">
+        </div>
+        <div data-role="popup" id="popupParis9" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto9">
+        </div>
+        <div data-role="popup" id="popupParis10" class="popphoto" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img id="popphoto10">
+        </div>
+
+
+
+        <div class="Collage effect-parent">
+            <!--prefetch pages into the DOM so that they're available instantly when the user visits them-->
+            <img src="http://25.media.tumblr.com/905208434c1570580b84d11e4c6ed75a/tumblr_mvidcuZS6m1rgoev0o1_500.jpg" data-prefetch>
+            <img src="http://farm8.staticflickr.com/7394/10576296294_478786dd5b.jpg" data-prefetch>
+            <img src="http://fineartamerica.com/images-medium-5/cal-state-university-long-beach-walter-pyramid-university-icons.jpg" data-prefetch>
+            <img src="http://burgerconquest.com/wp-content/uploads/2012/02/IMG_3656.jpg" data-prefetch>
+            <img src="http://www.terragalleria.com/images/black-white/mountain/yose11562-bw.jpeg" data-prefetch>
+            <img src="http://www.terragalleria.com/images/black-white/us-ca/usca35373-bw.jpeg" data-prefetch>
+            <img src="http://c2.staticflickr.com/4/3411/3244886308_998e822e11.jpg" data-prefetch>
+            <img src="http://www.pound4pound.com/Photos/BretNewton/2010/MannyPacquiaoWorkoutII/MannyPacquiao6.jpg" data-prefetch>
+            <img src="http://www.kcet.org/updaily/socal_focus/palm%20drive%20los%20angeles%201930.jpg">
+            <img src="http://californiathroughmylens.com/wp-content/uploads/2011/08/Pinks-Hot-Dog-Sign-black-and-white.jpg" data-prefetch>
+        </div>
+
+        <footer>&#169;
+            <!--copyright-->
+            <script language="JavaScript" type="text/javascript">
+                now = new Date
+                 theYear = now.getYear()
+                 if(theYear < 1900) theYear = theYear + 1900
+                 document.write(theYear)
+            </script>, Jon Almazan
+            <br/>Plug-in: CollagePlus for jQuery
+        </footer>
+    </div>
+
+</body>
+
+</html>
