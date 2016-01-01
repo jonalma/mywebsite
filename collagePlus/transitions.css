@@ -28,10 +28,14 @@ iframe {
 }
 <!--FOR NAV---------------------------------------> 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #divExpandNav{
 =======
 #divExpandNav {
 >>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
+=======
+#divExpandNav {
+>>>>>>> parent of b349aa4... Edited descriptions
     display: none;
     width: 250px;
     height: 250px;
@@ -47,12 +51,18 @@ iframe {
 }
 <!-- CSS ---------------------------------------> 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of b349aa4... Edited descriptions
 p.hidden {
     display: none;
     font-family: Calibri;
 }
+<<<<<<< HEAD
 >>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
+=======
+>>>>>>> parent of b349aa4... Edited descriptions
 .centerDiv {
     margin-left: auto;
     margin-right: auto;
