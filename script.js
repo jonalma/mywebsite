@@ -44,6 +44,7 @@ $(window).bind('resize', function() {
 function expandNav(paraID) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if($('#divExpandNav #' + paraID).is(":visible")) {
         $('#divExpandNav #' + paraID).slideUp('fast');
     }
@@ -61,10 +62,16 @@ function expandNav(paraID) {
     if($('#divExpandNav #' + paraID).is(":visible")) $('#divExpandNav #' + paraID).slideUp('fast');
     if($('#divExpandNav #' + paraID).is(":hidden")) $('#divExpandNav #' + paraID).slideDown('fast');
 >>>>>>> parent of b349aa4... Edited descriptions
+=======
+    $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
+    if($('#divExpandNav #' + paraID).is(":visible")) $('#divExpandNav #' + paraID).slideUp('fast');
+    if($('#divExpandNav #' + paraID).is(":hidden")) $('#divExpandNav #' + paraID).slideDown('fast');
+>>>>>>> parent of b349aa4... Edited descriptions
 }
 /////////////////////////////// popup video examples
 //////////////////////////////
 // popup examples
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 $(document).on("pagecreate", function() {
@@ -86,6 +93,13 @@ $( document ).on( "pagecreate", function() {
         var scrWidth = $( window ).width() - 30,
             scrHeight = $( window ).height() - 30,
 >>>>>>> parent of b349aa4... Edited descriptions
+=======
+$( document ).on( "pagecreate", function() {
+    // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
+    function scale( width, height, padding, border ) {
+        var scrWidth = $( window ).width() - 30,
+            scrHeight = $( window ).height() - 30,
+>>>>>>> parent of b349aa4... Edited descriptions
             ifrPadding = 2 * padding,
             ifrBorder = 2 * border,
             ifrWidth = width + ifrPadding + ifrBorder,
@@ -93,7 +107,11 @@ $( document ).on( "pagecreate", function() {
             h, w;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(ifrWidth < scrWidth && ifrHeight < scrHeight) {
+=======
+        if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+>>>>>>> parent of b349aa4... Edited descriptions
 =======
         if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
 >>>>>>> parent of b349aa4... Edited descriptions
@@ -131,6 +149,7 @@ $( document ).on( "pagecreate", function() {
         }
     });
 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
@@ -170,6 +189,9 @@ $( document ).on( "pagecreate", function() {
 });
 ///////////////////////
 >>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
+=======
+///////////////////////
+>>>>>>> parent of b349aa4... Edited descriptions
 =======
 ///////////////////////
 >>>>>>> parent of b349aa4... Edited descriptions
