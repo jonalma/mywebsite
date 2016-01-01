@@ -42,116 +42,23 @@ $(window).bind('resize', function() {
 //////////////////// control hide and show navigation bar
 
 function expandNav(paraID) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if($('#divExpandNav #' + paraID).is(":visible")) {
-        $('#divExpandNav #' + paraID).slideUp('fast');
-    }
-    if($('#divExpandNav #' + paraID).is(":hidden")) {
-        $('#divExpandNav #' + paraID).slideDown('fast');
-    }
-    $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
-=======
     $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
     if($('#divExpandNav #' + paraID).is(":visible")) $('#divExpandNav #' + paraID).slideUp('fast');
     if($('#divExpandNav #' + paraID).is(":hidden")) $('#divExpandNav #' + paraID).slideDown('fast');
->>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
-=======
-    $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
-    if($('#divExpandNav #' + paraID).is(":visible")) $('#divExpandNav #' + paraID).slideUp('fast');
-    if($('#divExpandNav #' + paraID).is(":hidden")) $('#divExpandNav #' + paraID).slideDown('fast');
->>>>>>> parent of b349aa4... Edited descriptions
-=======
-    $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
-    if($('#divExpandNav #' + paraID).is(":visible")) $('#divExpandNav #' + paraID).slideUp('fast');
-    if($('#divExpandNav #' + paraID).is(":hidden")) $('#divExpandNav #' + paraID).slideDown('fast');
->>>>>>> parent of b349aa4... Edited descriptions
 }
 /////////////////////////////// popup video examples
 //////////////////////////////
 // popup examples
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-$(document).on("pagecreate", function() {
-    // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
-    function scale(width, height, padding, border) {
-        var scrWidth = $(window).width() - 30,
-            scrHeight = $(window).height() - 30,
-=======
 $( document ).on( "pagecreate", function() {
     // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
     function scale( width, height, padding, border ) {
         var scrWidth = $( window ).width() - 30,
             scrHeight = $( window ).height() - 30,
->>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
-=======
-$( document ).on( "pagecreate", function() {
-    // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
-    function scale( width, height, padding, border ) {
-        var scrWidth = $( window ).width() - 30,
-            scrHeight = $( window ).height() - 30,
->>>>>>> parent of b349aa4... Edited descriptions
-=======
-$( document ).on( "pagecreate", function() {
-    // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
-    function scale( width, height, padding, border ) {
-        var scrWidth = $( window ).width() - 30,
-            scrHeight = $( window ).height() - 30,
->>>>>>> parent of b349aa4... Edited descriptions
             ifrPadding = 2 * padding,
             ifrBorder = 2 * border,
             ifrWidth = width + ifrPadding + ifrBorder,
             ifrHeight = height + ifrPadding + ifrBorder,
             h, w;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if(ifrWidth < scrWidth && ifrHeight < scrHeight) {
-=======
-        if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
->>>>>>> parent of b349aa4... Edited descriptions
-=======
-        if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
->>>>>>> parent of b349aa4... Edited descriptions
-            w = ifrWidth;
-            h = ifrHeight;
-        } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
-            w = scrWidth;
-            h = ( scrWidth / ifrWidth ) * ifrHeight;
-        } else {
-            h = scrHeight;
-            w = ( scrHeight / ifrHeight ) * ifrWidth;
-        }
-        return {
-            'width': w - ( ifrPadding + ifrBorder ),
-            'height': h - ( ifrPadding + ifrBorder )
-        };
-    };
-    $( ".ui-popup iframe" )
-        .attr( "width", 0 )
-        .attr( "height", "auto" );
-    $( "#popupVideo" ).on({
-        popupbeforeposition: function() {
-            // call our custom function scale() to get the width and height
-            var size = scale( 497, 298, 15, 1 ),
-                w = size.width,
-                h = size.height;
-            $( "#popupVideo iframe" )
-                .attr( "width", w )
-                .attr( "height", h );
-        },
-        popupafterclose: function() {
-            $( "#popupVideo iframe" )
-                .attr( "width", 0 )
-                .attr( "height", 0 );
-        }
-    });
-});
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
             w = ifrWidth;
             h = ifrHeight;
@@ -188,10 +95,3 @@ $( document ).on( "pagecreate", function() {
     });
 });
 ///////////////////////
->>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
-=======
-///////////////////////
->>>>>>> parent of b349aa4... Edited descriptions
-=======
-///////////////////////
->>>>>>> parent of b349aa4... Edited descriptions
