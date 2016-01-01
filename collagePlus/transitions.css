@@ -27,7 +27,11 @@ iframe {
     padding:20px;
 }
 <!--FOR NAV---------------------------------------> 
+<<<<<<< HEAD
 #divExpandNav{
+=======
+#divExpandNav {
+>>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
     display: none;
     width: 250px;
     height: 250px;
@@ -42,10 +46,13 @@ iframe {
     z-index: 99;
 }
 <!-- CSS ---------------------------------------> 
+<<<<<<< HEAD
+=======
 p.hidden {
     display: none;
     font-family: Calibri;
 }
+>>>>>>> 892f511a399430787af2b0ecbb8c079d208354d8
 .centerDiv {
     margin-left: auto;
     margin-right: auto;
