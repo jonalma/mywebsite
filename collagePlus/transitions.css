@@ -28,7 +28,6 @@ iframe {
 }
 <!--FOR NAV---------------------------------------> 
 #divExpandNav {
-    display: none;
     width: 250px;
     height: 250px;
     margin-left: -125px;
@@ -41,11 +40,11 @@ iframe {
     top: 50%;
     z-index: 99;
 }
-<!-- CSS ---------------------------------------> 
-p.hidden {
+#divExpandNav p
+{
     display: none;
-    font-family: Calibri;
 }
+<!-- CSS ---------------------------------------> 
 .centerDiv {
     margin-left: auto;
     margin-right: auto;
