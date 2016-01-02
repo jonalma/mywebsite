@@ -2,25 +2,38 @@
 // All images need to be loaded for this plugin to work so
 // we end up waiting for the whole window to load in this example
 $(window).load(function() {
-    $(document).ready(function() {
-        collage();
-        $('.Collage').collageCaption();
-        //////////////////////////////
-        var i = 1; //counter
-        $(".Collage img").each(function() {
-            var imgsrc = $(this).attr('src');
-            $("#popphoto" + i).attr("src", imgsrc); //create src attrivute
-            var a = $("<a>").attr({ //create a href with other attributes  
-                href: "#popupParis" + i,
-                "data-rel": "popup",
-                "data-position-to": "window",
-                "data-transition": "fade"
-            });
-            $(this).wrap(a); //wrap this img with link
-            i = i + 1;
-        }); //end img each
-        $('p').css('display', 'none');
-    }); //end document ready
+        $(document).ready(function() {
+                collage();
+                $('.Collage').collageCaption();
+                //////////////////////////////
+                var i = 1; //counter
+                $(".Collage img").each(function() {
+                    var imgsrc = $(this).attr('src');
+                    $("#popphoto" + i).attr("src", imgsrc); //create src attrivute
+                    var a = $("<a>").attr({ //create a href with other attributes  
+                        href: "#popupParis" + i,
+                        "data-rel": "popup",
+                        "data-position-to": "window",
+                        "data-transition": "fade"
+                    });
+                    $(this).wrap(a); //wrap this img with link
+                    i = i + 1;
+                }); //end img each
+                $('p').css('display', 'none');
+                /////////////////////////////// hover over images; replace .hover with text
+                $(".hoverDiv img").hover(function() {
+                        var overlayWidth= $(this).width();
+                        var overlayHeight= $(this).height();
+                        $(".overlay").width(overlayWidth).height(overlayHeight);
+                        $(this).fadeTo(200, 0.85).end().find(".overlay").show();
+                    }, function() {
+                        var overlayWidth= $(this).width();
+                        var overlayHeight= $(this).height();
+                        $(".overlay").width(overlayWidth).height(overlayHeight);
+                        $(this).fadeTo(200, 1).end().find(".overlay").hide();
+                    }
+                );
+        }); //end document ready
 }); //end window load
 // Here we apply the actual CollagePlus plugin
 
@@ -42,7 +55,7 @@ $(window).bind('resize', function() {
 //////////////////// control hide and show navigation bar
 
 function expandNav(paraID) {
-   $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
+    $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
     if($('#divExpandNav #' + paraID).is(":visible")) {
         $('#divExpandNav #' + paraID).slideUp('fast');
     }
@@ -50,8 +63,6 @@ function expandNav(paraID) {
         $('#divExpandNav #' + paraID).slideDown('fast');
     }
 }
-
-/////////////////////////////// popup video examples
 //////////////////////////////
 // popup examples
 $(document).on("pagecreate", function() {

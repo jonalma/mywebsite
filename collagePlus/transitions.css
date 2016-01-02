@@ -45,6 +45,16 @@ iframe {
     display: none;
 }
 <!-- CSS ---------------------------------------> 
+.hoverDiv {
+    display: inline;
+    position: relative;
+}
+.overlay {
+    background-color:black;
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
 .centerDiv {
     margin-left: auto;
     margin-right: auto;
