@@ -1,6 +1,7 @@
 ///////////////////////////////////// Collage Plus
 // All images need to be loaded for this plugin to work so
 // we end up waiting for the whole window to load in this example
+// 
 $(window).load(function() {
     $(document).ready(function() {
         collage();
@@ -19,15 +20,16 @@ $(window).load(function() {
             $(this).wrap(a); //wrap this img with link
             i = i + 1;
         }); //end img each
+        //////////////////////////////////
         $('p').css('display', 'none');
         /////////////////////////////// hover over images; replace .hover with text
+        var ol = $(".overlay");
         $(".hoverDiv img").hover(function() {
             var overlayWidth = $(this).width();
             var overlayHeight = $(this).height();
             var overlayPosition = $(this).position();
             var overlayOffsetLeft = $(this).offset().left;
             var overlayOffsetTop = $(this).offset().top;
-            var ol = $(".overlay");
             $(ol).css({
                 "top": overlayOffsetTop,
                 "left" :overlayOffsetLeft,
@@ -48,10 +50,6 @@ $(window).load(function() {
 }); //end window load
 // Here we apply the actual CollagePlus plugin
 
-function createOverlay(){
-    
-}
-
 function collage() {
     $('.Collage').removeWhitespace().collagePlus({
         'fadeSpeed': 1100,
@@ -70,6 +68,7 @@ $(window).bind('resize', function() {
 //////////////////// control hide and show navigation bar
 
 function expandNav(paraID) {
+    $(".overlay").css("z-index","-10"); // fixes bug (overlay still visible) by pushing it back rather than hiding and creating new div
     $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
     if($('#divExpandNav #' + paraID).is(":visible")) {
         $('#divExpandNav #' + paraID).slideUp('fast');
