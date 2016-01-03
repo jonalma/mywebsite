@@ -21,7 +21,7 @@ $(window).load(function() {
             i = i + 1;
         }); //end img each
         //////////////////////////////////
-        $('p').css('display', 'none');
+        $("#visibleDiv p").hide();
         /////////////////////////////// hover over images; replace .hover with text
         var ol = $(".overlay");
         $(".hoverDiv img").hover(function() {
@@ -29,7 +29,7 @@ $(window).load(function() {
             var overlay = createOverlay(ol, $(this));
             // find specific description according to image ID
             overlay.find("#" + $(this).attr('id')).show();
-            $(this).fadeTo(200, 0.2).end().add(".overlay").show("slow");
+            $(this).fadeTo(300, 0.2).end().add(".overlay").show("slow");
         }, function() {
             $(".overlay").find("#" + $(this).attr('id')).hide();
             $(this).fadeTo(200, 1).end().remove(".overlay").hide("slow");
@@ -74,14 +74,22 @@ $(window).bind('resize', function() {
 //////////////////// control hide and show navigation bar
 
 function expandNav(paraID) {
+    $(".overlay").css("top","-1000px"); // fixes bug which intereferes with nav descriptions
+    // find the specific nav description and get its html
+    // html() - Sets or returns the content of selected elements (including HTML markup); returns string
+    var stringDescription = ($('#divExpandNav').find('#'+paraID)).html();
+    if($('#visibleDiv p').is(":hidden"))
+        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
+    else
+        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
     //     if you clicked on a paraID, everything hides except the paraID you clicked on 
-    $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
-    if($('#divExpandNav #' + paraID).is(":visible")) {
-        $('#divExpandNav #' + paraID).slideUp('fast');
-    }
-    if($('#divExpandNav #' + paraID).is(":hidden")) {
-        $('#divExpandNav #' + paraID).slideDown('fast');
-    }
+    //     $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
+    //     if($('#divExpandNav #' + paraID).is(":visible")) {
+    //         $('#divExpandNav #' + paraID).slideUp('fast');
+    //     }
+    //     if($('#divExpandNav #' + paraID).is(":hidden")) {
+    //         $('#divExpandNav #' + paraID).slideDown('fast');
+    //     }
 }
 //////////////////////////////
 // popup examples
