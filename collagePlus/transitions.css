@@ -49,8 +49,16 @@ iframe {
     display: inline;
     position: relative;
 }
-.overlay {
-
+.overlay p{
+    display: none;
+    position: relative;
+    font-family: Arial;
+    color: white; 
+    font-size: 13px;
+    text-align:center;
+    top: 20%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .centerDiv {
     margin-left: auto;

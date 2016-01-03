@@ -36,9 +36,12 @@ $(window).load(function() {
                 "height": overlayHeight,
                 "position": "absolute",
                 "z-index": 0
-            })
-            $(this).fadeTo(200, 0.3).end().add(".overlay").show("slow");
+            });
+            // find specific description according to image ID
+            ol.find("#"+$(this).attr('id')).show(); 
+            $(this).fadeTo(200, 0.2).end().add(".overlay").show("slow");
         }, function() {
+            $(".overlay").find("#"+$(this).attr('id')).hide(); 
             $(this).fadeTo(200, 1).end().remove(".overlay").hide("slow");
         });
     }); //end document ready
