@@ -27,22 +27,27 @@ $(window).load(function() {
             var overlayPosition = $(this).position();
             var overlayOffsetLeft = $(this).offset().left;
             var overlayOffsetTop = $(this).offset().top;
-            $(".overlay").css({
+            var ol = $(".overlay");
+            $(ol).css({
                 "top": overlayOffsetTop,
                 "left" :overlayOffsetLeft,
                 "background-color": "black",
                 "width": overlayWidth,
                 "height": overlayHeight,
                 "position": "absolute",
-                "z-index": 100
+                "z-index": 0
             })
-            $(this).fadeTo(200, 0.85).end().add(".overlay").show();
+            $(this).fadeTo(200, 0.3).end().add(".overlay").show("slow");
         }, function() {
-            $(this).fadeTo(200, 1).end().remove(".overlay").hide();
+            $(this).fadeTo(200, 1).end().remove(".overlay").hide("slow");
         });
     }); //end document ready
 }); //end window load
 // Here we apply the actual CollagePlus plugin
+
+function createOverlay(){
+    
+}
 
 function collage() {
     $('.Collage').removeWhitespace().collagePlus({
