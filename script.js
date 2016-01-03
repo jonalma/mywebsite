@@ -25,29 +25,35 @@ $(window).load(function() {
         /////////////////////////////// hover over images; replace .hover with text
         var ol = $(".overlay");
         $(".hoverDiv img").hover(function() {
-            var overlayWidth = $(this).width();
-            var overlayHeight = $(this).height();
-            var overlayPosition = $(this).position();
-            var overlayOffsetLeft = $(this).offset().left;
-            var overlayOffsetTop = $(this).offset().top;
-            $(ol).css({
-                "top": overlayOffsetTop,
-                "left" :overlayOffsetLeft,
-                "background-color": "black",
-                "width": overlayWidth,
-                "height": overlayHeight,
-                "position": "absolute",
-                "z-index": 0
-            });
+            //create an overlay that has similar attributes as img (width, height, position, etc.)
+            var overlay = createOverlay(ol, $(this));
             // find specific description according to image ID
-            ol.find("#"+$(this).attr('id')).show(); 
+            overlay.find("#" + $(this).attr('id')).show();
             $(this).fadeTo(200, 0.2).end().add(".overlay").show("slow");
         }, function() {
-            $(".overlay").find("#"+$(this).attr('id')).hide(); 
+            $(".overlay").find("#" + $(this).attr('id')).hide();
             $(this).fadeTo(200, 1).end().remove(".overlay").hide("slow");
         });
     }); //end document ready
 }); //end window load
+
+function createOverlay(ol, image) {
+    var overlayWidth = image.width();
+    var overlayHeight = image.height();
+    var overlayPosition = image.position();
+    var overlayOffsetLeft = image.offset().left;
+    var overlayOffsetTop = image.offset().top;
+    $(ol).css({
+        "top": overlayOffsetTop,
+        "left": overlayOffsetLeft,
+        "background-color": "black",
+        "width": overlayWidth,
+        "height": overlayHeight,
+        "position": "absolute",
+        "z-index": 0
+    });
+    return ol;
+}
 // Here we apply the actual CollagePlus plugin
 
 function collage() {
@@ -68,7 +74,7 @@ $(window).bind('resize', function() {
 //////////////////// control hide and show navigation bar
 
 function expandNav(paraID) {
-    $(".overlay").css("z-index","-10"); // fixes bug (overlay still visible) by pushing it back rather than hiding and creating new div
+    //     if you clicked on a paraID, everything hides except the paraID you clicked on 
     $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
     if($('#divExpandNav #' + paraID).is(":visible")) {
         $('#divExpandNav #' + paraID).slideUp('fast');
