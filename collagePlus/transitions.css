@@ -40,10 +40,6 @@ iframe {
     top: 50%;
     z-index: 99;
 }
-#divExpandNav p
-{
-    display: none;
-}
 <!-- CSS ---------------------------------------> 
 .hoverDiv {
     display: inline;
