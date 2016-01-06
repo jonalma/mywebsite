@@ -82,14 +82,15 @@ function expandNav(paraID) {
     // html() - Sets or returns the content of selected elements (including HTML markup); returns string
     $(".overlay").css("top", "-1000px"); // fixes bug which intereferes with nav descriptions
     var stringDescription = ($('#divExpandNav').find('#' + paraID)).html();
+    // check if the nav you chose the nav you clickd on, and then show it
     if($('#visibleDiv p').is(":hidden") && currentNav == paraID) { 
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
-    } 
+    } //check if you clicked on another nav that's not currently displayed, and then show it
     else if ($('#visibleDiv p').is(":hidden") && currentNav != paraID){
         currentNav = paraID;
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
-    }
+    } //check if you clicked on another nav that's currently displayed, and then show it
     else if($('#visibleDiv p').is(":visible") && currentNav != paraID){
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
