@@ -23,13 +23,8 @@ $(window).load(function() {
         //////////////////////////////////
         $("#visibleDiv p").hide();
         /////////////////////////////// hover over images; replace .hover with text
-        var ol = $(".overlay");
         $(".hoverDiv img").hover(function() {
-            //create an overlay that has similar attributes as img (width, height, position, etc.)
-            var overlay = createOverlay(ol, $(this));
-            // find specific description according to image ID
-            overlay.find("#" + $(this).attr('id')).show();
-            $(this).fadeTo(300, 0.2).end().add(".overlay").show("slow");
+            hoverHandlerIn($(this));
         }, function() {
             $(".overlay").find("#" + $(this).attr('id')).hide();
             $(this).fadeTo(200, 1).end().remove(".overlay").hide("slow");
@@ -37,19 +32,27 @@ $(window).load(function() {
     }); //end document ready
 }); //end window load
 
-function createOverlay(ol, image) {
+function hoverHandlerIn(image) {
+    //create an overlay that has similar attributes as img (width, height, position, etc.)
+    var overlay = resizeOverlay($(".overlay"), image);
+    // find specific description according to image ID
+    overlay.find("#" + image.attr('id')).show();
+    image.fadeTo(300, 0.2).end().add(".overlay").show("slow");
+}
+
+function resizeOverlay(ol, image) {
     var overlayWidth = image.width();
     var overlayHeight = image.height();
     var overlayPosition = image.position();
     var overlayOffsetLeft = image.offset().left;
     var overlayOffsetTop = image.offset().top;
     $(ol).css({
-        "top": overlayOffsetTop,
-        "left": overlayOffsetLeft,
         "background-color": "black",
         "width": overlayWidth,
         "height": overlayHeight,
         "position": "absolute",
+        "top": overlayOffsetTop,
+        "left": overlayOffsetLeft,
         "z-index": 0
     });
     return ol;
@@ -72,24 +75,29 @@ $(window).bind('resize', function() {
     resizeTimer = setTimeout(collage, 200);
 });
 //////////////////// control hide and show navigation bar
+window.currentNav = "";
 
 function expandNav(paraID) {
-    $(".overlay").css("top","-1000px"); // fixes bug which intereferes with nav descriptions
     // find the specific nav description and get its html
     // html() - Sets or returns the content of selected elements (including HTML markup); returns string
-    var stringDescription = ($('#divExpandNav').find('#'+paraID)).html();
-    if($('#visibleDiv p').is(":hidden"))
+    $(".overlay").css("top", "-1000px"); // fixes bug which intereferes with nav descriptions
+    var stringDescription = ($('#divExpandNav').find('#' + paraID)).html();
+    if($('#visibleDiv p').is(":hidden") && currentNav == paraID) { 
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
-    else
+    } 
+    else if ($('#visibleDiv p').is(":hidden") && currentNav != paraID){
+        currentNav = paraID;
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
-    //     if you clicked on a paraID, everything hides except the paraID you clicked on 
-    //     $('#divExpandNav p').not($('#divExpandNav #' + paraID)).slideUp('fast');
-    //     if($('#divExpandNav #' + paraID).is(":visible")) {
-    //         $('#divExpandNav #' + paraID).slideUp('fast');
-    //     }
-    //     if($('#divExpandNav #' + paraID).is(":hidden")) {
-    //         $('#divExpandNav #' + paraID).slideDown('fast');
-    //     }
+        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
+    }
+    else if($('#visibleDiv p').is(":visible") && currentNav != paraID){
+        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
+        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
+    }
+    else // if the nav description is already showing
+        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
+    currentNav = paraID;
+    console.log(currentNav);
 }
 //////////////////////////////
 // popup examples
