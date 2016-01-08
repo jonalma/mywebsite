@@ -5,10 +5,11 @@
 $(window).load(function() {
     $(document).ready(function() {
         collage();
-        $('.Collage').collageCaption();
+        //$('.Collage').collageCaption();
+
         //////////////////////////////
         var i = 1; //counter
-        $(".Collage img").each(function() {
+        $(".hoverDiv img").each(function() {
             var imgsrc = $(this).attr('src');
             $("#popphoto" + i).attr("src", imgsrc); //create src attrivute
             var a = $("<a>").attr({ //create a href with other attributes  
@@ -88,11 +89,11 @@ function expandNav(paraID) {
     } //check if you clicked on another nav that's not currently displayed, and then show it
     else if ($('#visibleDiv p').is(":hidden") && currentNav != paraID){
         currentNav = paraID;
-        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
+        $('#visibleDiv p').html("<p></p>").slideUp('fast');
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
     } //check if you clicked on another nav that's currently displayed, and then show it
     else if($('#visibleDiv p').is(":visible") && currentNav != paraID){
-        $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
+        $('#visibleDiv p').html("<p></p>").slideUp('fast');
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
     }
     else // if the nav description is already showing
@@ -101,7 +102,7 @@ function expandNav(paraID) {
     console.log(currentNav);
 }
 //////////////////////////////
-// popup examples
+// dynamically resize collage as window is resized
 $(document).on("pagecreate", function() {
     // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
     function scale(width, height, padding, border) {
