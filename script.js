@@ -4,14 +4,14 @@
 // 
 $(window).load(function() {
     $(document).ready(function() {
+        //generates the Collage of pictures
         collage();
         //$('.Collage').collageCaption();
-
-        //////////////////////////////
+        //For each picture, create a pop up modal that enlarges the picture
         var i = 1; //counter
         $(".hoverDiv img").each(function() {
             var imgsrc = $(this).attr('src');
-            $("#popphoto" + i).attr("src", imgsrc); //create src attrivute
+            $("#popphoto" + i).attr("src", imgsrc); //create src attribute
             var a = $("<a>").attr({ //create a href with other attributes  
                 href: "#popupParis" + i,
                 "data-rel": "popup",
@@ -21,9 +21,9 @@ $(window).load(function() {
             $(this).wrap(a); //wrap this img with link
             i = i + 1;
         }); //end img each
-        //////////////////////////////////
+        //hide div when page loads
         $("#visibleDiv p").hide();
-        /////////////////////////////// hover over images; replace .hover with text
+        //hover over images; replace .hover with text
         $(".hoverDiv img").hover(function() {
             hoverHandlerIn($(this));
         }, function() {
@@ -32,6 +32,11 @@ $(window).load(function() {
         });
     }); //end document ready
 }); //end window load
+//Create Google Analytics tracking
+
+function gaTracking(gaq, nameID) {
+    gaq.push(['_trackEvent', 'GA tracking for ' + nameID, 'clicked']);
+}
 
 function hoverHandlerIn(image) {
     //create an overlay that has similar attributes as img (width, height, position, etc.)
@@ -75,8 +80,8 @@ $(window).bind('resize', function() {
     if(resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(collage, 200);
 });
-//////////////////// control hide and show navigation bar
-window.currentNav = "";
+// The expandNav controls hide and show navigation bar descriptions for (About Me, Projects, etc.)
+window.currentNav = ""; //variable to check if the nav you clicked was the same as the previous nav
 
 function expandNav(paraID) {
     // find the specific nav description and get its html
@@ -84,24 +89,22 @@ function expandNav(paraID) {
     $(".overlay").css("top", "-1000px"); // fixes bug which intereferes with nav descriptions
     var stringDescription = ($('#divExpandNav').find('#' + paraID)).html();
     // check if the nav you chose the nav you clickd on, and then show it
-    if($('#visibleDiv p').is(":hidden") && currentNav == paraID) { 
+    if($('#visibleDiv p').is(":hidden") && currentNav == paraID) {
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
     } //check if you clicked on another nav that's not currently displayed, and then show it
-    else if ($('#visibleDiv p').is(":hidden") && currentNav != paraID){
+    else if($('#visibleDiv p').is(":hidden") && currentNav != paraID) {
         currentNav = paraID;
         $('#visibleDiv p').html("<p></p>").slideUp('fast');
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
     } //check if you clicked on another nav that's currently displayed, and then show it
-    else if($('#visibleDiv p').is(":visible") && currentNav != paraID){
+    else if($('#visibleDiv p').is(":visible") && currentNav != paraID) {
         $('#visibleDiv p').html("<p></p>").slideUp('fast');
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideDown('fast');
-    }
-    else // if the nav description is already showing
+    } else // if the nav description is already showing
         $('#visibleDiv p').html("<p>" + stringDescription + "</p>").slideUp('fast');
     currentNav = paraID;
     console.log(currentNav);
 }
-//////////////////////////////
 // dynamically resize collage as window is resized
 $(document).on("pagecreate", function() {
     // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account

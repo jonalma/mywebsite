@@ -5,7 +5,11 @@ To change this template use Tools | Templates.
 <html>
 
 <head>
-    <title></title>
+    <title>A Website Made by Jon Almazan | jQuery & JavaScript</title>
+    <meta name="Description" content="Made by Jon Almazan. I recently graduated with a BS in Computer Science at California State University, Long Beach. CSULB">
+    <meta name="Yeezus" content="I appreciate good music. Yeezus Tour 2013 was great.">
+    <meta name="Random" content="codio jon almazan riviera cactus my personal website Github jonalma LinkedIn">
+    <meta name="CollagePlus" content=" This website a never-ending project to continually practice JavaScript, JQuery, HTML, and CSS. Plug-in is CollagePlus for jQuery by Ed Lea">
     <!--<meta name="viewport" content="width=device-width">-->
     <meta name="viewport" content="width=610px, initial-scale=.58, user-scalable=no">
 
@@ -18,25 +22,61 @@ To change this template use Tools | Templates.
     <script src="/collagePlus/jquery.collagePlus.js"></script>
     <script src="/collagePlus/jquery.removeWhitespace.js"></script>
     <script src="script.js"></script>
-
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-71787680-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </head>
 
 <body>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-54MS7J" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-54MS7J');
+        
+        ga('create', 'UA-71787680-1', 'riviera-cactus.codio.io/');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <div data-dom-cache="true" class="container">
         <div class="center">
             <h1 class="heading" align="center"><span>hello,</span> i'm jon.</h1> 
             <ul class='nav-fade'>
-                <li onclick='expandNav(this.id)' id='aboutme'>About Me
+                <!-- expand Nav Description and placed Google Analytics event tracking  -->
+                <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Aboutme', 'clicked')" id='aboutme'>About Me
                 </li>
-                <li onclick='expandNav(this.id)' id='projects'>Projects
+                <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Projects', 'clicked')" id='projects'>Projects
                 </li>
-                <li onclick='expandNav(this.id)' id='resume'>Resume
+                <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Resume', 'clicked')" id='resume'>Resume
                 </li>
-                <li onclick='expandNav(this.id)' id='contact'>Contact</li>
+                <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Contact', 'clicked')" id='contact'>Contact</li>
             </ul>
         </div>
 
-         <div class='Collage' id='visibleDiv'>
+        <div class='Collage' id='visibleDiv'>
             <p></p>
         </div>
         <div class='Collage' id='divExpandNav' style="display:none">
@@ -48,7 +88,7 @@ To change this template use Tools | Templates.
                 This website a never-ending project to continually practice JavaScript, JQuery, HTML, and CSS. Plug-in is <a href="https://ed-lea.github.io/jquery-collagePlus/" target="_blank">CollagePlus</a> for jQuery by <a href="https://github.com/ed-lea" target="blank">Ed Lea</a>
                 <br>
                 <br>
-                 <a href="" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Zabbix Triggers Client</a>
+                <a href="" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Zabbix Triggers Client</a>
                 This client application is in progress. It retrieves alert information from UNIX/Windows hosts within the last 24 hours. Java with Zabbix API/IntelliJ IDE.
                 <br>
                 <br>
@@ -59,11 +99,11 @@ To change this template use Tools | Templates.
                 Will be posted soon
                 <br>
             </p>
-            <p class='center' id='contact'> 
-                <strong></strong>jon_alma10@yahoo.com | 
-                <a href="https://www.linkedin.com/in/jon-almazan-93104b54" target="blank">Linkedin</a> | 
+            <p class='center' id='contact'>
+                <strong></strong>jon_alma10@yahoo.com |
+                <a href="https://www.linkedin.com/in/jon-almazan-93104b54" target="blank">Linkedin</a> |
                 <a href="https://github.com/jonalma" target="blank">Github</a>
-            <br>
+                <br>
             </p>
         </div>
 
