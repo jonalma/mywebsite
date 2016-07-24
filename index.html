@@ -6,15 +6,12 @@ To change this template use Tools | Templates.
 
 <head>
     <title>A Website Made by Jon Almazan | jQuery & JavaScript</title>
-    <meta name="Description" content="Made by Jon Almazan. I recently graduated with a BS in Computer Science at California State University, Long Beach. CSULB">
+    <meta name="Description" content="A Website developed by Jon Almazan. I recently graduated with a BS in Computer Science at California State University, Long Beach. CSULB">
     <meta name="Yeezus" content="I appreciate good music. Yeezus Tour 2013 was great.">
     <meta name="Random" content="codio jon almazan riviera cactus my personal website Github jonalma LinkedIn">
     <meta name="CollagePlus" content=" This website a never-ending project to continually practice JavaScript, JQuery, HTML, and CSS. Plug-in is CollagePlus for jQuery by Ed Lea">
     <!--<meta name="viewport" content="width=device-width">-->
     <meta name="viewport" content="width=610px, initial-scale=.58, user-scalable=no">
-
-    <link rel="stylesheet" type="text/css" href="/collagePlus/transitions.css" />
-    <link rel="stylesheet" href="/jquerymobile/jquery.mobile-1.4.5.css">
 
     <script src="jquery-1.11.3.min.js"></script>
     <script src="/jquerymobile/jquery.mobile-1.4.5.js"></script>
@@ -35,6 +32,9 @@ To change this template use Tools | Templates.
             s.parentNode.insertBefore(ga, s);
         })();
     </script>
+
+    <link rel="stylesheet" type="text/css" href="/collagePlus/transitions.css" />
+    <link rel="stylesheet" href="/jquerymobile/jquery.mobile-1.4.5.css">
 </head>
 
 <body>
@@ -56,7 +56,6 @@ To change this template use Tools | Templates.
             j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-54MS7J');
-        
         ga('create', 'UA-71787680-1', 'riviera-cactus.codio.io/');
     </script>
     <!-- End Google Tag Manager -->
@@ -88,12 +87,14 @@ To change this template use Tools | Templates.
                 This website a never-ending project to continually practice JavaScript, JQuery, HTML, and CSS. Plug-in is <a href="https://ed-lea.github.io/jquery-collagePlus/" target="_blank">CollagePlus</a> for jQuery by <a href="https://github.com/ed-lea" target="blank">Ed Lea</a>
                 <br>
                 <br>
-                <a href="" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Zabbix Triggers Client</a>
-                This client application is in progress. It retrieves alert information from UNIX/Windows hosts within the last 24 hours. Java with Zabbix API/IntelliJ IDE.
-                <br>
-                <br>
                 <a href="#popupVideo" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Boozehound</a>
                 Collaborated with two other classmates to create a semester-long project. This was our first Android application, which was intended for (legal and responsible) CSULB students. The project was developed in Java/Android SDK on Eclipse IDE.
+                <br>
+                <br>
+                    <span style="display: table-cell"><a href="https://bundle-cover.codio.io/Fappy.html" target="blank" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Flappy Bird</a> </span>
+                    <span style="display: table-cell; width: 100%;"><a href="https://stock-include.codio.io/mariotemplate.html" target="blank" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Super Mario</a> </span>
+                    <span style="display: table-cell"><a href="https://minute-page.codio.io/geoDash.html" target="blank" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Geometry Dash</a> </span>
+                    I was a youth instructor that taught programming fundamentals to younger kids. Recreating popular games such as Flappy Bird, Mario, and Geo Dash made programming more fun and engaging for the students. Developed in Phaser.js framework
             </p>
             <p class='center' id='resume'>
                 Will be posted soon
@@ -101,8 +102,8 @@ To change this template use Tools | Templates.
             </p>
             <p class='center' id='contact'>
                 <strong></strong>jon_alma10@yahoo.com |
-                <a href="https://www.linkedin.com/in/jon-almazan-93104b54" target="blank">Linkedin</a> |
-                <a href="https://github.com/jonalma" target="blank">Github</a>
+                <a id="linkedin" href="https://www.linkedin.com/in/jon-almazan-93104b54" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Linkedin', 'clicked')">Linkedin</a> |
+                <a id="github" href="https://github.com/jonalma" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Github', 'clicked')">Github</a>
                 <br>
             </p>
         </div>
@@ -156,30 +157,30 @@ To change this template use Tools | Templates.
 
 
         <div class="overlay">
-            <p id='kanye'>I appreciate good music. Yeezus Tour 2013 was great.</p>
-            <p id='venice'>Venice Beach has such a lively atmosphere. Enjoy the beach, the street performers, and the summertime weather.</p>
-            <p id='pyramid'>Also known as the Walter Pyramid, It is located at CSULB.</p>
-            <p id='innout'>If In-N-Out doesn't make your mouth water, then go home.</p>
-            <p id='climb'>I'm addicted to rock climbing, specifically bouldering.</p>
-            <p id='downtown'>I am proud to be a native of South Bay, Los Angeles.</p>
-            <p id='kobe'>I love basketball. If you're from LA, you HAVE to be a Kobe Bryant fan. YOU. HAVE. TO.</p>
-            <p id='manny'>I'm Filipino
+            <p id='kanye'>I attended Yeezus Tour 2013</p>
+            <p id='venice'>Venice Beach</p>
+            <p id='pyramid'>The Walter pyramid at CSULB</p>
+            <p id='innout'>In-N-Out is the best</p>
+            <p id='climb'>I like to rock climbing, specifically bouldering</p>
+            <p id='downtown'>I am a South Bay, Los Angeles native</p>
+            <p id='kobe'>I love basketball, and I'm a die-hard Kobe Bryant fan</p>
+            <p id='manny'>Filipino
                 <br>=
                 <br>Automatic Manny Pacquiao Fan</p>
-            <p id='trees'>You can see random palm trees driving through Los Angeles.</p>
-            <p id='traffic'>I wish traffic was this clear on the freeways of Los Angeles. I love that I hate LA traffic.</p>
+            <p id='trees'>Palm trees in the city of Los Angeles</p>
+            <p id='airport'>LAX airport</p>
         </div>
         <div class="Collage effect-parent hoverDiv">
-            <img id='kanye' src="http://25.media.tumblr.com/905208434c1570580b84d11e4c6ed75a/tumblr_mvidcuZS6m1rgoev0o1_500.jpg" data-prefetch>
-            <img id='venice' src="http://farm8.staticflickr.com/7394/10576296294_478786dd5b.jpg" data-prefetch>
-            <img id='pyramid' src="http://fineartamerica.com/images-medium-5/cal-state-university-long-beach-walter-pyramid-university-icons.jpg" data-prefetch>
-            <img id='innout' src="http://burgerconquest.com/wp-content/uploads/2012/02/IMG_3656.jpg" data-prefetch>
-            <img id='climb' src="http://www.terragalleria.com/images/black-white/mountain/yose11562-bw.jpeg" data-prefetch>
-            <img id='downtown' src="http://www.terragalleria.com/images/black-white/us-ca/usca35373-bw.jpeg" data-prefetch>
-            <img id='kobe' src="http://c2.staticflickr.com/4/3411/3244886308_998e822e11.jpg" data-prefetch>
-            <img id='manny' src="http://www.pound4pound.com/Photos/BretNewton/2010/MannyPacquiaoWorkoutII/MannyPacquiao6.jpg" data-prefetch>
-            <img id='trees' src="http://www.kcet.org/updaily/socal_focus/palm%20drive%20los%20angeles%201930.jpg">
-            <img id='traffic' src="http://www.kcet.org/updaily/socal_focus/CHS-48579.jpg" data-prefetch>
+            <img id='kanye' src="/images/kwest.jpg" data-prefetch>
+            <img id='venice' src="/images/ven.jpg" data-prefetch>
+            <img id='pyramid' src="/images/lb.jpg" data-prefetch>
+            <img id='innout' src="/images/inout.jpg" data-prefetch>
+            <img id='climb' src="/images/rock.jpeg" data-prefetch>
+            <img id='downtown' src="/images/dt.jpeg" data-prefetch>
+            <img id='kobe' src="/images/kobe.jpg" data-prefetch>
+            <img id='manny' src="/images/manny.jpg" data-prefetch>
+            <img id='trees' src="/images/tre.jpeg">
+            <!--             <img id='airport' src="/images/lax.png" data-prefetch>  -->
         </div>
 
         <footer>&#169;
