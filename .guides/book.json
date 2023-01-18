@@ -1,0 +1,17 @@
+{
+ "name": "Personal Website",
+ "children": [
+  {
+   "title": "Page 1",
+   "id": "282af19b-25ed-8bd8-9c09-8a14fa1f711c",
+   "pageId": "282af19b-25ed-8bd8-9c09-8a14fa1f711c",
+   "type": "page"
+  },
+  {
+   "title": "Page 2",
+   "id": "2aee1ef0-eeeb-537b-3ce4-114f47a77c98",
+   "pageId": "2aee1ef0-eeeb-537b-3ce4-114f47a77c98",
+   "type": "page"
+  }
+ ]
+}

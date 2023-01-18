@@ -2,21 +2,21 @@
 To change this template use Tools | Templates.
 -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html hidden>
 <main>
     <div class="header-img"></div>
 </main>
     
-<head>
+<head hidden>
     <title>A Website Made by Jon Almazan | jQuery & JavaScript</title>
     <meta property="og:image" content="https://www.soniceditions.com/library/los-angeles-I6OP_o_tn.jpg" />
-    <meta name="Description" content="A Website developed by Jon Almazan. I graduated from California State University, Long Beach with a BS in Computer Science ">
+    <meta name="Description" content="Created this website from scratch (JQuery/JavaScript, Collage plus plugin, HTML/CSS). Implemented the hoover effect. Visible on mobile browser">
     <meta name="Yeezus" content="I appreciate good music. Yeezus Tour 2013 was great.">
     <meta name="Random" content="codio jon almazan riviera cactus my personal website Github jonalma LinkedIn">
     <meta name="CollagePlus" content=" This website a never-ending project to continually practice JavaScript, JQuery, HTML, and CSS. Plug-in is CollagePlus for jQuery by Ed Lea">
     <!--<meta name="viewport" content="width=device-width">-->
     <meta name="viewport" content="width=610px, initial-scale=.58, user-scalable=no">
-
+    
     <script src="jquery-1.11.3.min.js"></script>
     <script src="/jquerymobile/jquery.mobile-1.4.5.js"></script>
     <script src="/collagePlus/jquery.collageCaption.js"></script>
@@ -74,7 +74,7 @@ To change this template use Tools | Templates.
                 </li>
                 <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Resume', 'clicked')" id='resume'>Resume
                 </li>
-                <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Contact', 'clicked')" id='contact'>Contact</li>
+                <li onclick="expandNav(this.id); gaTracking(_gaq, this.id); ga('send', 'event','Links', 'clicked')" id='links'>Links</li>
             </ul>
         </div>
 
@@ -82,7 +82,7 @@ To change this template use Tools | Templates.
             <p></p>
         </div>
         <div class='Collage' id='divExpandNav' style="display:none">
-            <p id='aboutme'>I graduated with a BS in Computer Science at California State University, Long Beach. Below are people, places, and things I appreciate.
+            <p id='aboutme'>Below are people, places, and things I appreciate.
                 <br>
             </p>
             <p id='projects'>
@@ -91,7 +91,7 @@ To change this template use Tools | Templates.
                 <br>
                 <br>
                 <a href="#popupVideo" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Boozehound</a>
-                Collaborated with two other classmates to create a semester-long project. This was our first Android application, which was intended for (legal and responsible) CSULB students. The project was developed in Java/Android SDK on Eclipse IDE.
+                Lead Android developer with two other classmates to create a semester-long project. This Android application, which was intended for (legal and responsible) CSULB students. Developed in Java/Android SDK on Eclipse IDE, Scrum Methodology.
                 <br>
                 <br>
                     <span style="display: table-cell; width: 50%;"><a href="https://bundle-cover.codio.io/Fappy.html" target="blank" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Flappy Bird</a> </span>
@@ -103,10 +103,13 @@ To change this template use Tools | Templates.
                 Will be posted soon
                 <br>
             </p>
-            <p class='center' id='contact'>
+            <p class='center' id='links'>
                 <strong></strong>jon_alma10@yahoo.com |
                 <a id="linkedin" href="https://www.linkedin.com/in/jon-almazan-93104b54" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Linkedin', 'clicked')">Linkedin</a> |
-                <a id="github" href="https://github.com/jonalma" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Github', 'clicked')">Github</a>
+                <a id="github" href="https://github.com/jonalma" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Github', 'clicked')">Github</a> |
+                <a id="credly" href="https://www.credly.com/users/jon-ian-almazan" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Credly', 'clicked')">Credly</a> |
+                <a id="blog" href="https://jonalma.github.io/" target="blank" onclick="gaTracking(_gaq, this.id); ga('send', 'event','Blog', 'clicked')">blog</a> 
+                
                 <br>
             </p>
         </div>
@@ -164,10 +167,8 @@ To change this template use Tools | Templates.
 
 
         <div class="overlay">
-            <p id='venice'>Venice Beach</p>
             <p id='pyramid'>The Walter pyramid at CSULB</p>
             <p id='innout'>In-N-Out is the best</p>
-            <p id='climb'>Let's go camping and rock climb</p>
             <p id='downtown'>I am a South Bay, Los Angeles native</p>
             <p id='kobe'>Kobe Bryant!</p>
             <p id='manny'>Manny Pacquiao hehe</p>
@@ -176,11 +177,9 @@ To change this template use Tools | Templates.
             <p id='airport'>LAX airport</p>
         </div>
         <div class="Collage effect-parent hoverDiv">
-            <img id='venice' src="/images/ven.jpg" data-prefetch>
             <img id='pyramid' src="/images/lb.jpg" data-prefetch>
             <img id='bruno' src="/images/bruno.png" data-prefetch>
             <img id='innout' src="/images/inout.jpg" data-prefetch>
-            <img id='climb' src="/images/rock.jpeg" data-prefetch>
             <img id='downtown' src="/images/dt.jpeg" data-prefetch>
             <img id='kobe' src="/images/kobe.jpg" data-prefetch>
             <img id='manny' src="/images/manny.jpg" data-prefetch>

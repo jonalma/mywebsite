@@ -4,8 +4,11 @@
 // 
 $(window).load(function() {
     $(document).ready(function() {
+        // hide html to allow jquery/javascript to load
+        document.getElementsByTagName("html")[0].hidden = false;
+        
         //generates the Collage of pictures
-        collage();
+        collage();     
         //$('.Collage').collageCaption();
         //For each picture, create a pop up modal that enlarges the picture
         var i = 1; //counter
